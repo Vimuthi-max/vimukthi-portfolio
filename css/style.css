@@ -9944,3 +9944,84 @@ textarea.form-control {
     color: #343a40;
     background: #ffbd39;
 }
+/* --- Custom Mobile Responsive Fixes --- */
+
+/* Ensure viewport is correct */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Containers full width on mobile */
+.container, .container-fluid {
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Example for navbar / header */
+.navbar, header {
+    flex-wrap: wrap;
+}
+
+/* Typography adjustments for smaller screens */
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Media queries for screens under 768px */
+@media (max-width: 767px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.1rem; }
+    
+    .navbar, nav {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col, .col-12, .col-md-6, .col-lg-4 {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .text-center-mobile {
+        text-align: center;
+    }
+
+    .section-padding {
+        padding: 15px;
+    }
+}
+
+/* Optional: make buttons full width on mobile */
+@media (max-width: 767px) {
+    button, .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
