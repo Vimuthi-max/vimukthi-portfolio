@@ -9947,6 +9947,9 @@ textarea.form-control {
 /* --- Custom Mobile Responsive Fixes --- */
 
 /* Ensure viewport is correct */
+/* --- Custom Mobile Responsive Fixes --- */
+
+/* Ensure viewport is correct */
 html {
     font-size: 16px;
 }
@@ -9987,11 +9990,70 @@ h3 {
     font-size: 1.5rem;
 }
 
-/* Media queries for screens under 768px */
+/* Media queries for screens under 768px (Mobile/Tablet) */
 @media (max-width: 767px) {
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.25rem; }
-    h3 { font-size: 1.1rem; }
+    h3 { font-size: 1.25rem; }
+
+    /* 0. Mobile Navbar Toggle Button Style */
+    .mobile-nav-toggle {
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        z-index: 9999;
+        width: 40px;
+        height: 40px;
+        background: #ffbd39; /* Yellow/Primary Color */
+        color: #fff;
+        border-radius: 50%;
+        display: flex !important; /* Overrides d-lg-none on mobile */
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 1. Sidebar is hidden by default on mobile */
+    .sidebar {
+        left: -250px; /* Slide it off-screen */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        -webkit-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    /* 2. Content shift is removed by default on mobile */
+    .content-shifted {
+        margin-left: 0 !important;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* 3. When sidebar is toggled open (via 'sidebar-toggled' class on body) */
+    body.sidebar-toggled .sidebar {
+        left: 0; /* Slide in the sidebar */
+    }
+
+    body.sidebar-toggled.content-shifted {
+        margin-left: 250px !important; /* Shift the content to the right to reveal the sidebar */
+    }
+
+    /* 4. Add a semi-transparent overlay when the sidebar is open on mobile */
+    body.sidebar-toggled::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+}
     
     .navbar, nav {
         flex-direction: column;
