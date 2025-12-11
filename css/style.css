@@ -9946,8 +9946,6 @@ textarea.form-control {
 }
 /* --- Custom Mobile Responsive Fixes --- */
 
-/* --- Custom Mobile Responsive Fixes --- */
-
 /* Ensure viewport is correct */
 html {
     font-size: 16px;
@@ -9993,12 +9991,7 @@ h3 {
 @media (max-width: 767px) {
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.25rem; }
-    h3 { font-size: 1.25rem; }
-
-    /* Mobile Sidebar Toggle Fix */
-    /* You might need to add/update your mobile navigation logic here */
-
-}
+    h3 { font-size: 1.1rem; }
     
     .navbar, nav {
         flex-direction: column;
@@ -10031,4 +10024,3 @@ h3 {
         margin-bottom: 10px;
     }
 }
-
